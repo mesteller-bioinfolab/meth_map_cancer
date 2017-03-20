@@ -286,7 +286,7 @@ mkdir $OUTDIR/genomicFeatures
 samples=*.hmr.metrics.bed
 
 # intersection with genomic features
-echo $samples | sed 's/ /\n/g' | xargs -n 1 -P 40 -I {} /home/evidal/scripts/bsdata/split.hmr.genomicFeature.sh {} $OUTDIR/genomicFeatures
+echo $samples | sed 's/ /\n/g' | xargs -n 1 -P 40 -I {} /home/user/scripts/bsdata/split.hmr.genomicFeature.sh {} $OUTDIR/genomicFeatures
 
 
 ####################
@@ -447,21 +447,21 @@ bedtools intersect -u -a CpG_context_$i.hmr.metrics.bed -b normal.frequent.hmr.m
 done
 
 # intersection with genomic features                                                                                                                                                                                                        
-/home/evidal/scripts/bsdata/split.hmr.genomicFeature.sh normal.common.hmr.merged100b.bed $OUTDIR/genomicFeatures
-/home/evidal/scripts/bsdata/split.hmr.genomicFeature.sh normal.frequent.hmr.merged100b.bed $OUTDIR/genomicFeatures
+/home/user/scripts/bsdata/split.hmr.genomicFeature.sh normal.common.hmr.merged100b.bed $OUTDIR/genomicFeatures
+/home/user/scripts/bsdata/split.hmr.genomicFeature.sh normal.frequent.hmr.merged100b.bed $OUTDIR/genomicFeatures
 
 
 # get samples again
 samples=*.common.hmr.bed
 
 # intersection with genomic features                                                                                                                                                                                                        
-echo $samples | sed 's/ /\n/g' | xargs -n 1 -P 40 -I {} /home/evidal/scripts/bsdata/split.hmr.genomicFeature.sh {} $OUTDIR/genomicFeatures
+echo $samples | sed 's/ /\n/g' | xargs -n 1 -P 40 -I {} /home/user/scripts/bsdata/split.hmr.genomicFeature.sh {} $OUTDIR/genomicFeatures
 
 # get samples again
 samples=*.frequent.hmr.bed
 
 # intersection with genomic features                                                                                                                                                                                                        
-echo $samples | sed 's/ /\n/g' | xargs -n 1 -P 40 -I {} /home/evidal/scripts/bsdata/split.hmr.genomicFeature.sh {} $OUTDIR/genomicFeatures
+echo $samples | sed 's/ /\n/g' | xargs -n 1 -P 40 -I {} /home/user/scripts/bsdata/split.hmr.genomicFeature.sh {} $OUTDIR/genomicFeatures
 
 ###########################
 ####### tissue specific HMR
@@ -635,7 +635,7 @@ echo specific autosomes others `grep -v X $allhmrs | bedtools intersect -u -a - 
 samples=*.specific.bed
 
 # intersection with genomic features                                                                                                                                                                                                        
-echo $samples | sed 's/ /\n/g' | xargs -n 1 -P 40 -I {} /home/evidal/scripts/bsdata/split.hmr.genomicFeature.sh {} $OUTDIR/genomicFeatures
+echo $samples | sed 's/ /\n/g' | xargs -n 1 -P 40 -I {} /home/user/scripts/bsdata/split.hmr.genomicFeature.sh {} $OUTDIR/genomicFeatures
 
 
 # get only coging promoters
